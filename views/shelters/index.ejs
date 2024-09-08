@@ -1,0 +1,41 @@
+<% layout('/layouts/boilerplate.ejs') %>
+<div id="cluster-map"></div>
+<div class="container">
+  <h1>All Shelters</h1>
+  <% for (let shelter of shelters) {%>
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-md-4">
+        <% if (shelter.images.length) { %> <img crossorigin="anonymous"
+        class="img-fluid" alt="" src="<%= shelter.images[0].url%>""> <% } else {
+        %>
+        <img
+          crossorigin="anonymous"
+          class="img-fluid"
+          alt=""
+          src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        /><% } %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= shelter.title%></h5>
+          <p class="card-text"><%=shelter.description%></p>
+          <p class="card-text">
+            <small class="text-muted"><%=shelter.location%></small>
+          </p>
+          <a class="btn btn-primary" href="/shelters/<%=shelter._id%>"
+            >View <%=shelter.title%></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <%}%>
+</div>
+
+<script>
+  const maptilerApiKey = "<%- process.env.MAPTILER_API_KEY %>";
+  const shelters = {features: <%- JSON.stringify(shelters) %>}
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>
