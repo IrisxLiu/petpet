@@ -1,6 +1,6 @@
 # PetPet
 
-![PetPet Homepage](https://res.cloudinary.com/dvfvycxxc/image/upload/w_800,h_600/v1725777779/petpet_wzce0c.png)
+![PetPet Homepage](https://res.cloudinary.com/dvfvycxxc/image/upload/w_1200/v1725777779/petpet_wzce0c.png)
 
 This is a platform where you can share animal shelters resources and review them.
 
